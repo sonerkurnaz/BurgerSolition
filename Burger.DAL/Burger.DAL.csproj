@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ADONET\**" />
+    <Compile Remove="Dapper\**" />
+    <EmbeddedResource Remove="ADONET\**" />
+    <EmbeddedResource Remove="Dapper\**" />
+    <None Remove="ADONET\**" />
+    <None Remove="Dapper\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Burger.Entities\Burger.Entities.csproj" />
   </ItemGroup>
 
@@ -17,11 +26,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Dapper\" />
-    <Folder Include="ADONET\" />
   </ItemGroup>
 
 </Project>
