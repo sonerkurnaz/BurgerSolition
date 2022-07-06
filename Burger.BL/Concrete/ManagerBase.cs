@@ -13,32 +13,32 @@ namespace Burger.BL.Concrete
         {
             repository = new RepositoryBase<T>();
         }
-        public int Add(T input)
+        public virtual int Add(T input)
         {
             throw new NotImplementedException();
         }
 
-        public int Delete(T input)
+        public virtual int Delete(T input)
         {
             throw new NotImplementedException();
         }
 
-        public T Get(int id)
+        public virtual T Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IList<T> GetAll(Expression<Func<T, bool>> filter = null)
+        public virtual IList<T> GetAll(Expression<Func<T, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<T> GetAllInclude(Expression<Func<T, bool>> filter = null, params Expression<Func<T, object>>[] include)
+        public virtual IQueryable<T> GetAllInclude(Expression<Func<T, bool>> filter = null, params Expression<Func<T, object>>[] include)
         {
             throw new NotImplementedException();
         }
 
-        public int Update(T input)
+        public virtual int Update(T input)
         {
             throw new NotImplementedException();
         }
