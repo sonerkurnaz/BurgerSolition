@@ -1,6 +1,6 @@
 ﻿namespace Burger.Entities
 {
-    internal class Kullanicilar : BaseEntity
+    public class Kullanicilar : BaseEntity
     {
         public string Ad { get; set; }
         public string Soyad { get; set; }

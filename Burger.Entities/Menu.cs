@@ -1,6 +1,6 @@
 ﻿namespace Burger.Entities
 {
-    internal class Menu : BaseEntity
+    public class Menu : BaseEntity
     {
         public string MenuAdi { get; set; }
         public string Tanimlama { get; set; }

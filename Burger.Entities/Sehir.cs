@@ -1,6 +1,9 @@
 ﻿namespace Burger.Entities
 {
-    public class Sehir
+    public class Sehir : BaseEntity
     {
+        public string SehirAdi { get; set; }
+
+        public ICollection<Ilce> Ilce { get; set; }
     }
 }
