@@ -13,10 +13,10 @@ namespace Burger.DAL.Contexts
         {
 
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocadb;Database=Burger;Trusted_Connection=True");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Server=.;Database=Burger;User Id=sa;Password=123");
+        //}
         public DbSet<Adres> Adresler { get; set; }
         public DbSet<Ilce> Ilceler { get; set; }
         public DbSet<Kategori> Kategoriler { get; set; }

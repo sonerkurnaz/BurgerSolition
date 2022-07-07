@@ -1,6 +1,7 @@
-using Burger.BL.Abstract;
+﻿using Burger.BL.Abstract;
 using Burger.BL.Concrete;
 using Burger.DAL.Contexts;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,20 @@ builder.Services
     options.UseSqlServer(builder.Configuration.GetConnectionString("Burger")));
 
 builder.Services.AddScoped<IKategoriManager, KategoriManager>();
+builder.Services.AddScoped<IUserManager, UserManager>();
+
+#region Cookie Ayarları
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/User/Login";
+        options.LogoutPath = "/User/Logout";
+        options.AccessDeniedPath = "/User/Yasak";
+        options.Cookie.Name = "ErcanBurger";
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SameSite = SameSiteMode.Strict;
+    });
+#endregion
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -22,7 +37,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 //app.UseEndpoints(endpoints =>
